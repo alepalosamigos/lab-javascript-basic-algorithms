@@ -28,6 +28,25 @@ const reverseHacker2 = hacker2.split('').reverse().join('')
 console.log(reverseHacker2)
 
 // 3.3 Dependiendo del orden lexicográfico de las cadenas, imprimir:
-The driver's name goes first.
-Yo, the navigator goes first, definitely.
-What?! You both have the same name?
+const lengthResult = 0
+const maxLength = Math.max(hacker1.length, hacker2.length)
+for (let i = 0; i < maxLength; i++) {
+    const char1 = hacker1[i] || ""
+    const char2 = hacker2[i] || ""
+
+    if (char1 < char2) {
+        lengthResult = -1
+        break
+    } else if (char1 > char2) {
+        lengthResult = 1
+        break
+    }
+}
+
+if (lengthResult < 0) {
+    console.log("The driver's name goes first.")
+} else if (lengthResult > 0) {
+    console.log("Yo, the navigator goes first, definitely.")
+} else {
+    console.log("What?! You both have the same name?")
+}
